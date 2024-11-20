@@ -34,14 +34,13 @@ public class OrderCompleteTest extends Hooks {
 		// creating an object of the automationtesting.co.uk webpage
 		Homepage home = new Homepage();
 
-		//handles cookie prompt
-		home.getCookie().click();
+		
 
 		home.getTestStoreLink().click();
 		ExtentManager.pass("Have successfully reached store homepage");
 
 		// creating an object of the test store homepage
-		ShopHomepage shopHome = new ShopHomepage();
+		Homepage shopHome = new Homepage();
 		shopHome.getProdOne().click();
 		ExtentManager.pass("Have successfully clicked on product");
 
@@ -57,10 +56,7 @@ public class OrderCompleteTest extends Hooks {
 		shopProd.getAddToCartBtn().click();
 		ExtentManager.pass("Have successfully added item to cart");
 
-		// creating an object of the cart content panel (once an item was added)
-		ShopContentPanel cPanel = new ShopContentPanel();
-		cPanel.getCheckoutBtn().click();
-
+		
 		// creating an object of the shopping cart page (all items selected)
 		ShoppingCart cart = new ShoppingCart();
 		ExtentManager.pass("Have successfully reached the shopping cart page");
