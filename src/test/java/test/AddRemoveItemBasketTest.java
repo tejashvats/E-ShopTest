@@ -3,6 +3,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -14,15 +15,22 @@ import pageObjects.ShopHomepage;
 import pageObjects.ShopProductPage;
 import pageObjects.ShoppingCart;
 
-@Listeners(resources.Listeners.class)
+@Listeners(resources.Listener.class)
 
-public class AddRemoveItemBasketTest extends Hooks {
+@BeforeMethod
+public void setUp() {
+	 System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
 
-	public AddRemoveItemBasketTest() throws IOException {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+        // Initialize the WebDriver (e.g., ChromeDriver)
+        driver = new ChromeDriver();
 
+        // Maximize the browser window
+        driver.manage().window().maximize();
+
+        // Open the URL
+        driver.get("https://www.example.com");
+    }
+}
 	@Test
 	public void addRemoveItem() throws IOException {
 		
