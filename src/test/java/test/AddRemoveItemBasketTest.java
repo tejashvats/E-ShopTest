@@ -30,7 +30,7 @@ public void setUp() {
         // Open the URL
         driver.get("https://www.example.com");
     }
-}
+
 	@Test
 	public void addRemoveItem() throws IOException {
 		
