@@ -28,7 +28,7 @@ public void setUp() {
         driver.manage().window().maximize();
 
         // Open the URL
-        driver.get("https://www.example.com");
+        driver.get("https://automationtesting.co.uk/popups.html");
     }
 
 	@Test
