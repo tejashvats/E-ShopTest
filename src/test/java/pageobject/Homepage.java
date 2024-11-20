@@ -92,8 +92,7 @@ public class Homepage {
 		return driver.findElement(loginPortalLink);
 	}	
 	
-	public WebElement getMouseLink() {
-		return driver.findElement(mouseLink);
+	
 	}	
 	
 	public WebElement getPopupLink() {
@@ -116,8 +115,6 @@ public class Homepage {
 		return driver.findElement(aboutMeLink);
 	}
 
-	public WebElement getCookie() throws IOException {
-		return driver.findElement(cookie);
-	}
+	
 	
 }

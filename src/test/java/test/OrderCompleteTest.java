@@ -6,19 +6,19 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import base.ExtentManager;
 import base.Hooks;
-import pageObjects.Homepage;
-import pageObjects.OrderFormDelivery;
-import pageObjects.OrderFormPayment;
-import pageObjects.OrderFormPersInfo;
-import pageObjects.OrderFormShippingMethod;
-import pageObjects.ShopContentPanel;
-import pageObjects.ShopHomepage;
-import pageObjects.ShopProductPage;
-import pageObjects.ShoppingCart;
+import pageobject.OrderFormPayment;
+import pageobject.ShopContentPanel;
+import pageobject.ShopHomepage;
+import pageobject.Homepage;
+import pageobject.OrderFormDelivery;
+import pageobject.OrderFormPersInfo;
+import pageobject.OrderFormShippingMethod;
+import pageobject.ShopProductPage;
+import pageobject.ShoppingCart;
+import resources.ExtentManager;
 
-@Listeners(resources.Listeners.class)
+@Listeners(resources.Listener.class)
 
 public class OrderCompleteTest extends Hooks {
 
