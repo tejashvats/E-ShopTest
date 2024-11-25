@@ -1,44 +1,31 @@
-
+package uk.co.automationtesting;
 
 import java.io.IOException;
 
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import base.ExtentManager;
 import base.Hooks;
-import pageobject.OrderFormPayment;
-import pageobject.ShopContentPanel;
-import pageobject.ShopHomepage;
-import pageobject.Homepage;
-import pageobject.OrderFormDelivery;
-import pageobject.OrderFormPersInfo;
-import pageobject.OrderFormShippingMethod;
-import pageobject.ShopProductPage;
-import pageobject.ShoppingCart;
-import resources.ExtentManager;
+import pageObjects.Homepage;
+import pageObjects.OrderFormDelivery;
+import pageObjects.OrderFormPayment;
+import pageObjects.OrderFormPersInfo;
+import pageObjects.OrderFormShippingMethod;
+import pageObjects.ShopContentPanel;
+import pageObjects.ShopHomepage;
+import pageObjects.ShopProductPage;
+import pageObjects.ShoppingCart;
 
-@Listeners(resources.Listener.class)
+@Listeners(resources.Listeners.class)
 
-public class OrderCompleteTest  {
-	public WebDriver = driver;
+public class OrderCompleteTest extends Hooks {
 
-	
-	@BeforeMethod
-	public void setUp() {
-		 System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+	public OrderCompleteTest() throws IOException {
+		super();
+	}
 
-	        // Initialize the WebDriver (e.g., ChromeDriver)
-	        driver = new ChromeDriver();
-
-	        // Maximize the browser window
-	        driver.manage().window().maximize();
-
-	        // Open the URL
-	        driver.get("https://automationtesting.co.uk/popups.html");
-	    }
-	
 	@Test
 	public void endToEndTest() throws InterruptedException, IOException {
 
@@ -47,13 +34,14 @@ public class OrderCompleteTest  {
 		// creating an object of the automationtesting.co.uk webpage
 		Homepage home = new Homepage();
 
-		
+		//handles cookie prompt
+		home.getCookie().click();
 
 		home.getTestStoreLink().click();
 		ExtentManager.pass("Have successfully reached store homepage");
 
 		// creating an object of the test store homepage
-		Homepage shopHome = new Homepage();
+		ShopHomepage shopHome = new ShopHomepage();
 		shopHome.getProdOne().click();
 		ExtentManager.pass("Have successfully clicked on product");
 
@@ -69,7 +57,10 @@ public class OrderCompleteTest  {
 		shopProd.getAddToCartBtn().click();
 		ExtentManager.pass("Have successfully added item to cart");
 
-		
+		// creating an object of the cart content panel (once an item was added)
+		ShopContentPanel cPanel = new ShopContentPanel();
+		cPanel.getCheckoutBtn().click();
+
 		// creating an object of the shopping cart page (all items selected)
 		ShoppingCart cart = new ShoppingCart();
 		ExtentManager.pass("Have successfully reached the shopping cart page");

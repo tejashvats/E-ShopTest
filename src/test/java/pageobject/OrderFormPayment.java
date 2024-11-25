@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class OrederFormPayment {
+public class OrderFormPayment {
 
 	public WebDriver driver;
 	
@@ -13,7 +13,7 @@ public class OrederFormPayment {
 	By termsAndConditions = By.xpath("//input[@id='conditions_to_approve[terms-and-conditions]']");
 	By orderBtn = By.xpath("//div[@id='payment-confirmation']//button[@type='submit']");
 	
-	public OrederFormPayment(WebDriver driver) {
+	public OrderFormPayment(WebDriver driver) {
 		this.driver = driver;
 	}
 	

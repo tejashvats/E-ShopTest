@@ -1,9 +1,9 @@
+package uk.co.automationtesting;
 
 import java.io.IOException;
 
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -15,21 +15,14 @@ import pageObjects.ShopHomepage;
 import pageObjects.ShopProductPage;
 import pageObjects.ShoppingCart;
 
-@Listeners(resources.Listener.class)
-WebDriver driver;
-@BeforeMethod
-public void setUp() {
-	 System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+@Listeners(resources.Listeners.class)
 
-        // Initialize the WebDriver (e.g., ChromeDriver)
-        driver = new ChromeDriver();
+public class AddRemoveItemBasketTest extends Hooks {
 
-        // Maximize the browser window
-        driver.manage().window().maximize();
-
-        // Open the URL
-        driver.get("https://automationtesting.co.uk/popups.html");
-    };
+	public AddRemoveItemBasketTest() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	@Test
 	public void addRemoveItem() throws IOException {
@@ -91,3 +84,4 @@ public void setUp() {
 
 	}
 
+}
