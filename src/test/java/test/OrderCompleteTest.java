@@ -3,6 +3,7 @@
 import java.io.IOException;
 
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -20,12 +21,24 @@ import resources.ExtentManager;
 
 @Listeners(resources.Listener.class)
 
-public class OrderCompleteTest extends Hooks {
+public class OrderCompleteTest  {
+	public WebDriver = driver;
 
-	public OrderCompleteTest() throws IOException {
-		super();
-	}
+	
+	@BeforeMethod
+	public void setUp() {
+		 System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
 
+	        // Initialize the WebDriver (e.g., ChromeDriver)
+	        driver = new ChromeDriver();
+
+	        // Maximize the browser window
+	        driver.manage().window().maximize();
+
+	        // Open the URL
+	        driver.get("https://automationtesting.co.uk/popups.html");
+	    }
+	
 	@Test
 	public void endToEndTest() throws InterruptedException, IOException {
 

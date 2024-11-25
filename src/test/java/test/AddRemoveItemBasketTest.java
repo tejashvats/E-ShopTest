@@ -16,7 +16,7 @@ import pageObjects.ShopProductPage;
 import pageObjects.ShoppingCart;
 
 @Listeners(resources.Listener.class)
-
+WebDriver driver;
 @BeforeMethod
 public void setUp() {
 	 System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
@@ -29,7 +29,7 @@ public void setUp() {
 
         // Open the URL
         driver.get("https://automationtesting.co.uk/popups.html");
-    }
+    };
 
 	@Test
 	public void addRemoveItem() throws IOException {
@@ -91,4 +91,3 @@ public void setUp() {
 
 	}
 
-}

@@ -6,10 +6,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import base.BasePage;
-import base.ExtentManager;
-
-public class Listener extends testbase.BasePage implements ITestListener {
+public class Listener extends base.BasePage implements ITestListener {
 
 	public Listener() throws IOException {
 		super();
@@ -20,6 +17,7 @@ public class Listener extends testbase.BasePage implements ITestListener {
 		ExtentManager.createTest(context.getName(), context.getName());
 
 	}
+	
 
 	public synchronized void onTestFailure(ITestResult result) {
 		ExtentManager.getTest().fail(result.getThrowable());

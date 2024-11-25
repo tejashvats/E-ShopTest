@@ -1,4 +1,4 @@
-package base;
+package resources;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -8,6 +8,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+
+import base.BasePage;
 
 public class ExtentManager extends BasePage {
 
